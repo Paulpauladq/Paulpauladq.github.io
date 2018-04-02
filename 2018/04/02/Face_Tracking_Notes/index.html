@@ -7,13 +7,28 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="[TOC] Face TrackingFace Detection and Tracking Using the KLT Algorithm 脸部追踪（甚至该人倾斜他的头，移动或者头部离相机很远的时候）  使用feature points  脸部追踪的三步：  面部检测 定义追踪的特征 追踪   首先使用Viola-Jones detection algorithm进行人脸检测，随后使用minim">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/04/02/Face_Tracking_Notes/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC] Face TrackingFace Detection and Tracking Using the KLT Algorithm 脸部追踪（甚至该人倾斜他的头，移动或者头部离相机很远的时候）  使用feature points  脸部追踪的三步：  面部检测 定义追踪的特征 追踪   首先使用Viola-Jones detection algorithm进行人脸检测，随后使用minim">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="c:/Users/Paul/Desktop/Face%20Tracking/Images/GFTT/GFTT_35.PNG">
+<meta property="og:image" content="c:/Users/Paul/Desktop/Face%20Tracking/Images/GFTT/WeChat%20Image_20171221210136.jpg">
+<meta property="og:image" content="c:/Users/Paul/Desktop/Face%20Tracking/Images/GFTT/WeChat%20Image_20171221210131.jpg">
+<meta property="og:image" content="c:/Users/Paul/Desktop/Face%20Tracking/Images/GFTT/WeChat%20Image_20171221210127.jpg">
+<meta property="og:image" content="c:/Users/Paul/Desktop/Face%20Tracking/Images/GFTT/WeChat%20Image_20171221210114.jpg">
+<meta property="og:image" content="c:/Users/Paul/Desktop/Face%20Tracking/Images/GFTT/GFTT_25.PNG">
+<meta property="og:image" content="c:/Users/Paul/Desktop/Face%20Tracking/Images/GFTT/GFTT_35.PNG">
+<meta property="og:image" content="c:/Users/Paul/Desktop/Face%20Tracking/Images/GFTT/GFTT_45.PNG">
+<meta property="og:image" content="c:/Users/Paul/Desktop/Face%20Tracking/Images/GFTT/GFTT_200.PNG">
+<meta property="og:image" content="c:/Users/Paul/Desktop/Face%20Tracking/Images/GFTT/example1.PNG">
+<meta property="og:updated_time" content="2018-03-26T12:53:29.186Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="[TOC] Face TrackingFace Detection and Tracking Using the KLT Algorithm 脸部追踪（甚至该人倾斜他的头，移动或者头部离相机很远的时候）  使用feature points  脸部追踪的三步：  面部检测 定义追踪的特征 追踪   首先使用Viola-Jones detection algorithm进行人脸检测，随后使用minim">
+<meta name="twitter:image" content="c:/Users/Paul/Desktop/Face%20Tracking/Images/GFTT/GFTT_35.PNG">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,363 +75,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Machine Learning by Andrew NG" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/02/Machine Learning by Andrew NG/" class="article-date">
-  <time datetime="2018-04-02T07:29:46.601Z" itemprop="datePublished">2018-04-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="Machine-Learning-by-Andrew-NG"><a href="#Machine-Learning-by-Andrew-NG" class="headerlink" title="Machine Learning by Andrew NG"></a>Machine Learning by Andrew NG</h1><h2 id="Prioritizing-what-to-work-on-Spam-classification-example"><a href="#Prioritizing-what-to-work-on-Spam-classification-example" class="headerlink" title="Prioritizing what to work on: Spam classification example"></a>Prioritizing what to work on: Spam classification example</h2><ol>
-<li><strong>Example</strong>: spam classification</li>
-<li>Steps to work on: <ul>
-<li>Supervised learning</li>
-<li>Listing all the possible features(choose 100 indicative words)</li>
-<li>Build a classification vector based on features</li>
-</ul>
-</li>
-<li>Improve the <strong>accuracy</strong>:<ul>
-<li>Collect lots of data</li>
-<li>Develop sophisticated features</li>
-<li>Develop algorithms to process your input in different ways</li>
-</ul>
-</li>
-</ol>
-<h2 id="Error-Analysis"><a href="#Error-Analysis" class="headerlink" title="Error Analysis"></a>Error Analysis</h2><ol>
-<li>Start with a simple algorithm, implement it quickly, and test it early on your cross validation data.</li>
-<li>Plot learning curves to decide if more data, more features, etc. are likely to help.</li>
-<li>Manually examine the errors on examples in the cross validation set and try to spot a trend where most of the errors were made.</li>
-<li>get error results as a <strong>single, numerical</strong> value.</li>
-</ol>
-<h2 id="Error-Metrics-for-Skewed-Data"><a href="#Error-Metrics-for-Skewed-Data" class="headerlink" title="Error Metrics for Skewed Data"></a>Error Metrics for Skewed Data</h2><ol>
-<li><strong>Error Metrics</strong>: </li>
-</ol>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th style="text-align:left">Actual Class</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td style="text-align:left">1</td>
-<td>0</td>
-</tr>
-<tr>
-<td>Predicted Class</td>
-<td>1</td>
-<td style="text-align:left">True positive</td>
-<td>False Positive</td>
-</tr>
-<tr>
-<td></td>
-<td>0</td>
-<td style="text-align:left">False negative</td>
-<td>True negative</td>
-</tr>
-</tbody>
-</table>
-<ol start="2">
-<li><strong>Precision</strong>: = true positive/predicted class = true pos/ true pos + false pos</li>
-<li><strong>Recall</strong>: = true pos/actual class = true pos + false neg</li>
-<li><strong>Tradeoff</strong> between P and R: $F_1$ Score(F Score): 2 <em> P </em> R/ ( P + R)</li>
-<li>Tackle with <strong>Large data rationale</strong>:<ul>
-<li>Use a learning algorithm w/ many parameters ( guarantee low bias) </li>
-<li>Use a very large training set (guarantee low variance)</li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/02/Machine Learning by Andrew NG/" data-id="cjfhxi7zz00033gvj1dxsj16s" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Hadoop" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/02/Hadoop/" class="article-date">
-  <time datetime="2018-04-02T07:29:45.088Z" itemprop="datePublished">2018-04-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h1><h2 id="MapReduce-Mechanism"><a href="#MapReduce-Mechanism" class="headerlink" title="MapReduce Mechanism"></a>MapReduce Mechanism</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><ol>
-<li>Map: 将数据集分成独立的块，每个快由map任务平行执行</li>
-<li>Reduce: 框架将map的输出排序并输入到reduce任务中</li>
-<li>工作的输入和输出都被存储在文件系统之中</li>
-<li>框架的作用:<ul>
-<li>规划任务</li>
-<li>监督任务</li>
-<li>重新执行失败的任务</li>
-</ul>
-</li>
-<li>compute nodes 和 storage nodes是同一个，即MapReduce和HDFS在同一组节点上运行。这种设定可以允许框架高效地在数据显示地地方执行工作，在集群中获得较高的带宽</li>
-<li>Framework:<ul>
-<li>a single master – ResourceManager</li>
-<li>one slave NodeManager per cluster-node</li>
-<li>MRAppMaster per application</li>
-</ul>
-</li>
-<li>分布式执行的方式：<ul>
-<li>应用制定输入输出的和地址，通过实现接口来提供 map，reduce函数</li>
-<li>hadoop job client将job以及相关的configuration提交给ResourceManager</li>
-<li>ResourceManager将任务分发给slave NodeManager，进行一系列监控和安排操作</li>
-</ul>
-</li>
-</ol>
-<h3 id="Inputs-and-Outputs"><a href="#Inputs-and-Outputs" class="headerlink" title="Inputs and Outputs"></a>Inputs and Outputs</h3><ol>
-<li><p>MapReduce函数只通过键值对进行操作（通过键值对进行输入以及输出）</p>
-</li>
-<li><p>Input and Output types of a MapReduce job:</p>
-<p>(input) <code>&lt;k1, v1&gt; -&gt;</code> <strong>map</strong> <code>-&gt; &lt;k2, v2&gt; -&gt;</code> <strong>combine</strong> <code>-&gt; &lt;k2, v2&gt; -&gt;</code> <strong>reduce</strong> <code>-&gt; &lt;k3, v3&gt;</code> (output)</p>
-</li>
-<li><p>key和value类需要被框架进行排序，同时需要<strong>实现Writable的接口</strong>，同时，key类需要实现WritableComparable接口使得框架可以对map的输入进行排序</p>
-</li>
-</ol>
-<h3 id="MapReduce-Mechanism-1"><a href="#MapReduce-Mechanism-1" class="headerlink" title="MapReduce Mechanism"></a>MapReduce Mechanism</h3><ol>
-<li><strong>Input Split</strong>: 根据输入文件计算输入分片，每个分片的大小和HDFS中的块的关系很密切</li>
-<li>Map阶段：为程序员编写</li>
-<li>Combiner阶段：是Map运算的后续操作，主要是在Map计算出中间文件之前进行简单的合作重复键值的操作</li>
-<li>Shuffle阶段：</li>
-<li>Reduce阶段：为程序员编写</li>
-</ol>
-<ol start="6">
-<li>与MapReduce相关的<strong>独立的实体</strong>： <ul>
-<li>the client: 用于配置和提交job</li>
-<li>the JobTracker: 初始化作业，分配作业，协调整个作业的执行</li>
-<li>TaskTracker: 在JobTracker分配的数据片段上执行Map或Reduce任务，</li>
-<li>HDFS: 储存作业的数据以及配置信息等</li>
-</ul>
-</li>
-</ol>
-<p><img src="C:\Users\pault\Desktop\MapReduce.PNG" alt="MapReduce"></p>
-<h3 id="Example-WordCount"><a href="#Example-WordCount" class="headerlink" title="Example: WordCount"></a>Example: WordCount</h3><p>Assume one file of the input text is as follows:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World Bye World</span><br></pre></td></tr></table></figure>
-<ol>
-<li>public void map: mapper通过map方法来实现，每次对一行进行操作，将每行用空格分隔成tokens</li>
-</ol>
-<p>，输出键值对，结果如下（没有排序）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt; Hello, 1&gt;</span><br><span class="line">&lt; World, 1&gt;</span><br><span class="line">&lt; Bye, 1&gt;</span><br><span class="line">&lt; World, 1&gt;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>job.setCombinerClass(IntSumReducer.class): 每个map的输出传入本地的combiner（只针对每个文件）中，结果如下(对于key有排序)：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt; Bye, 1&gt;</span><br><span class="line">&lt; Hello, 1&gt;</span><br><span class="line">&lt; World, 2&gt;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>public void reduce: 将所有文件中的键值对一起合并起来</li>
-</ol>
-<h2 id="HDFS-Architecture"><a href="#HDFS-Architecture" class="headerlink" title="HDFS Architecture"></a>HDFS Architecture</h2><ol>
-<li><p><strong>NameNode</strong>: a single Namenode, “Master” that manage the file system namespace and regulates access to files by clients.</p>
-</li>
-<li><p><strong>DataNodes</strong>: “Slaves”, usually one per node in the cluster that manage storage attached to the nodes that they run on.</p>
-</li>
-<li><p><strong>Heartbeat</strong>: a signal used between a data node and a slave node（NameNode周期性接收DataNode的信号，如果JobTracker没有接受到信号，则TaskTracker存在一定的问题）</p>
-</li>
-<li><p><strong>File System Namespace</strong>: HDFS supports a traditional hierarchical file organization.</p>
-</li>
-<li><p><strong>Data Replication</strong>: </p>
-<ul>
-<li><p>stores each file as a sequence of blocks(are <strong>replicated</strong> for fault tolerance). </p>
-</li>
-<li><p>An application can specify the number of replicas of a file.</p>
-</li>
-<li><p>Files in HDFS are write-once.</p>
-<p>​</p>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="YARN-Architecture"><a href="#YARN-Architecture" class="headerlink" title="YARN Architecture"></a>YARN Architecture</h2><h2 id="Apache-Mahout"><a href="#Apache-Mahout" class="headerlink" title="Apache Mahout"></a>Apache Mahout</h2><h3 id="Recommendations"><a href="#Recommendations" class="headerlink" title="Recommendations"></a>Recommendations</h3><ol>
-<li>Defining Recommendation: User-based/ item-based / content-based</li>
-<li><p>Running a first recommender engine:</p>
-<ul>
-<li>Create a recommender input file – intro.csv </li>
-<li>Create a recommender</li>
-</ul>
-</li>
-<li><p>Components of a recommender engine:</p>
-<ul>
-<li>UserSimilarity: 提供了两者的相似程度</li>
-<li>UserNeighborhood: 提供了一组和某个特定用户相近的用户群</li>
-<li>DataModel: 储存和保证所有数据被执行</li>
-<li>Recommender: 将所有的组件集合起来</li>
-</ul>
-</li>
-<li>​</li>
-</ol>
-<h1 id="Databases"><a href="#Databases" class="headerlink" title="Databases"></a>Databases</h1><h2 id="Database-Selection"><a href="#Database-Selection" class="headerlink" title="Database Selection"></a>Database Selection</h2><h3 id="数据库仓库系统"><a href="#数据库仓库系统" class="headerlink" title="数据库仓库系统"></a>数据库仓库系统</h3><p>数据仓库系统是指具有综合企业数据的能力，能够对大量企业数据进行快速和准确分析，辅助做出更好的商业决策的系统。它本身包括三部分内容：</p>
-<ol>
-<li><a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%B1%82" target="_blank" rel="noopener">数据层</a>：实现对企业操作数据的抽取、转换、清洗和汇总，形成信息数据，并存储在企业级的中心信息数据库中。</li>
-<li><a href="https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E5%B1%82/4329788" target="_blank" rel="noopener">应用层</a>：通过联机分析处理，甚至是数据挖掘等应用处理，实现对信息数据的分析。</li>
-<li>表现层：通过前台分析工具，将查询报表、统计分析、多维联机分析和数据发掘的结论展现在用户面前。</li>
-</ol>
-<h2 id="Pattern-Tradeoff"><a href="#Pattern-Tradeoff" class="headerlink" title="Pattern Tradeoff"></a>Pattern Tradeoff</h2><h3 id="OLTP"><a href="#OLTP" class="headerlink" title="OLTP"></a>OLTP</h3><ol>
-<li>Definition: <strong>传统数据库侧重交易处理，即OLTP</strong>，关注的是多用户的同时的双向操作，在保障即时性的要求下，系统通过内存来处理数据的分配、读写等操作，存在IO瓶颈。</li>
-<li><p>特点：</p>
-<ul>
-<li>数据在系统中产生</li>
-<li>基于交易的处理系统</li>
-<li>每次交易牵涉的数据量很小</li>
-<li>对响应时间要求很高</li>
-</ul>
-<p>​</p>
-</li>
-</ol>
-<h3 id="OLAP"><a href="#OLAP" class="headerlink" title="OLAP"></a>OLAP</h3><ol>
-<li>Definition: <strong>分析型数据库是以实时多维分析技术作为基础，即侧重OLAP</strong>，对数据进行多角度的模拟和归纳，从而得出数据中所包含的信息和知识。</li>
-<li><p>特点：</p>
-<ul>
-<li><p>本身不产生数据</p>
-</li>
-<li><p>基于查询的分析系统</p>
-<p>​</p>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="Apache-Storm"><a href="#Apache-Storm" class="headerlink" title="Apache Storm"></a>Apache Storm</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ol>
-<li><p>What is Storm?</p>
-<p>Apache Storm is a distributed real-time big data-processing system.</p>
-</li>
-<li><p>Apache Storm versus. Hadoop:</p>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>Storm</th>
-<th>Hadoop</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Real-time stream processing</td>
-<td>Batch processing</td>
-</tr>
-<tr>
-<td>Stateless</td>
-<td>Stateful</td>
-</tr>
-<tr>
-<td>Master/Slave architecture with ZooKeeper based coordination. The master node is called as <strong>nimbus</strong> and slaves are <strong>supervisors</strong>.</td>
-<td>Master-slave architecture with/without ZooKeeper based coordination. Master node is <strong>job tracker</strong> and slave node is <strong>task tracker</strong>.</td>
-</tr>
-<tr>
-<td>A Storm streaming process can access tens of thousands messages per second on cluster.</td>
-<td>Hadoop Distributed File System (HDFS) uses MapReduce framework to process vast amount of data that takes minutes or hours.</td>
-</tr>
-<tr>
-<td>Storm topology runs until shutdown by the user or an unexpected unrecoverable failure.</td>
-<td>MapReduce jobs are executed in a sequential order and completed eventually.</td>
-</tr>
-<tr>
-<td><strong>Both are distributed and fault-tolerant</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>If nimbus / supervisor dies, restarting makes it continue from where it stopped, hence nothing gets affected.</td>
-<td>If the JobTracker dies, all the running jobs are lost.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Core-Concepts"><a href="#Core-Concepts" class="headerlink" title="Core Concepts"></a>Core Concepts</h3><ol>
-<li>工作原理：在一端读取实时数据的原始流并传递给一系列无需的处理单元并在另一端输出处理过的信息。</li>
-<li>components:</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Components</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Tuple</td>
-<td>Tuple is the main data structure in Storm. It is a list of ordered elements. By default, a Tuple supports all data types. Generally, it is modelled as a set of comma separated values and passed to a Storm cluster. （数据刘中的数据单元，包含着数据）</td>
-</tr>
-<tr>
-<td style="text-align:center">Stream</td>
-<td>Stream is an unordered sequence of tuples.（无序的tuple序列）</td>
-</tr>
-<tr>
-<td style="text-align:center">Spouts</td>
-<td>Source of stream. Generally, Storm accepts input data from raw data sources like Twitter Streaming API, Apache Kafka queue, Kestrel queue, etc. Otherwise you can write spouts to read data from datasources. “ISpout” is the core interface for implementing spouts. Some of the specific interfaces are IRichSpout, BaseRichSpout, KafkaSpout, etc.（数据流的源头，通过Spouts从数据源读取数据）</td>
-</tr>
-<tr>
-<td style="text-align:center">Bolts</td>
-<td>Bolts are logical processing units. Spouts pass data to bolts and bolts process and produce a new output stream. Bolts can perform the operations of filtering, aggregation, joining, interacting with data sources and databases. Bolt receives data and emits to one or more bolts. “IBolt” is the core interface for implementing bolts. Some of the common interfaces are IRichBolt, IBasicBolt, etc.（处理单元，可以有多个）</td>
-</tr>
-</tbody>
-</table>
-<ol start="3">
-<li><p>topology: spout 和bolts 共同形成拓扑，使用时需要把整个拓扑图构造出来</p>
-<ul>
-<li>定义数据从哪儿来</li>
-<li>定义数据流向和处理单元的逻辑</li>
-<li>定义数据到哪里去</li>
-</ul>
-</li>
-<li><p>Tasks: 即任务，一个task就是一个Spout的执行或者一个Bolt的执行</p>
-</li>
-<li><p>Workers: 即工作进程，负责实际运行task；topology运行在一个分布式环境中的多个节点上，Storm会把tasks均匀分布在所有worker（每个Worker都是一个物理JVM执行这拓扑中所有task的子集）上</p>
-</li>
-<li><p>Stream Grouping: 定义tuple在topology中如何流动，常见的4种常用的分组策略：</p>
-<ul>
-<li>Shuffle Grouping：随机分配，可以让每个bolt中的worker获得数量均衡的Tuple</li>
-<li>Field Grouping: 根据field名字来分配，某个field分组，名字相同的tuples会被组织在一起</li>
-<li>Global Grouping: 全局统一分组，所有数据流都流向同一个Worker</li>
-<li>All Grouping:  向每个实例都发送一次</li>
-</ul>
-<p>​</p>
-</li>
-</ol>
-<h3 id="Cluster-Architecture"><a href="#Cluster-Architecture" class="headerlink" title="Cluster Architecture"></a>Cluster Architecture</h3><ol>
-<li>节点：storm cluster中有2中类型节点：master node 和 worker node</li>
-<li><strong>Nimbus</strong>: Master node 中运行着一个守护进程，负责向集群中分布代码、分配任务、监控失败状况</li>
-<li><strong>Supervisor</strong>: 每个worker node运行的daemon，负责接受工作任务，根据nimbus的指令来启动或者停止工作进程</li>
-<li>协作：nimbus(stateless)和supervisor(stateless)之间的协作是通过zookeeper集群完成的</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/02/Hadoop/" data-id="cjfhxi7zy00023gvj5cyme79e" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Face_Tracking_Notes" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Face_Tracking_Notes" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/04/02/Face_Tracking_Notes/" class="article-date">
   <time datetime="2018-04-02T07:29:40.888Z" itemprop="datePublished">2018-04-02</time>
@@ -850,92 +509,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/02/hello-world/" class="article-date">
-  <time datetime="2018-04-02T07:22:42.501Z" itemprop="datePublished">2018-04-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2018/04/02/Hadoop/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          (no title)
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/02/hello-world/">Hello World</a>
-    </h1>
   
+    <a href="/2018/04/02/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/02/hello-world/" data-id="cjfhxi7zw00013gvj3y7h6fts" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-jessica是个大笨蛋" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/02/jessica是个大笨蛋/" class="article-date">
-  <time datetime="2018-04-02T07:09:28.000Z" itemprop="datePublished">2018-04-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/02/jessica是个大笨蛋/">jessica是个大笨蛋</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/02/jessica是个大笨蛋/" data-id="cjfhxi80c00043gvjofco5w7q" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         

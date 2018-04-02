@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[TOC] Machine Learning by Andrew NGPrioritizing what to work on: Spam classification example Example: spam classification Steps to work on:  Supervised learning Listing all the possible features(choos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/04/02/Machine Learning by Andrew NG/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC] Machine Learning by Andrew NGPrioritizing what to work on: Spam classification example Example: spam classification Steps to work on:  Supervised learning Listing all the possible features(choos">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-12-17T07:16:44.418Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="[TOC] Machine Learning by Andrew NGPrioritizing what to work on: Spam classification example Example: spam classification Steps to work on:  Supervised learning Listing all the possible features(choos">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Machine Learning by Andrew NG" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/02/Machine Learning by Andrew NG/" class="article-date">
+  <time datetime="2018-04-02T07:29:46.601Z" itemprop="datePublished">2018-04-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="Machine-Learning-by-Andrew-NG"><a href="#Machine-Learning-by-Andrew-NG" class="headerlink" title="Machine Learning by Andrew NG"></a>Machine Learning by Andrew NG</h1><h2 id="Prioritizing-what-to-work-on-Spam-classification-example"><a href="#Prioritizing-what-to-work-on-Spam-classification-example" class="headerlink" title="Prioritizing what to work on: Spam classification example"></a>Prioritizing what to work on: Spam classification example</h2><ol>
+<li><strong>Example</strong>: spam classification</li>
+<li>Steps to work on: <ul>
+<li>Supervised learning</li>
+<li>Listing all the possible features(choose 100 indicative words)</li>
+<li>Build a classification vector based on features</li>
+</ul>
+</li>
+<li>Improve the <strong>accuracy</strong>:<ul>
+<li>Collect lots of data</li>
+<li>Develop sophisticated features</li>
+<li>Develop algorithms to process your input in different ways</li>
+</ul>
+</li>
+</ol>
+<h2 id="Error-Analysis"><a href="#Error-Analysis" class="headerlink" title="Error Analysis"></a>Error Analysis</h2><ol>
+<li>Start with a simple algorithm, implement it quickly, and test it early on your cross validation data.</li>
+<li>Plot learning curves to decide if more data, more features, etc. are likely to help.</li>
+<li>Manually examine the errors on examples in the cross validation set and try to spot a trend where most of the errors were made.</li>
+<li>get error results as a <strong>single, numerical</strong> value.</li>
+</ol>
+<h2 id="Error-Metrics-for-Skewed-Data"><a href="#Error-Metrics-for-Skewed-Data" class="headerlink" title="Error Metrics for Skewed Data"></a>Error Metrics for Skewed Data</h2><ol>
+<li><strong>Error Metrics</strong>: </li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th style="text-align:left">Actual Class</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td style="text-align:left">1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Predicted Class</td>
+<td>1</td>
+<td style="text-align:left">True positive</td>
+<td>False Positive</td>
+</tr>
+<tr>
+<td></td>
+<td>0</td>
+<td style="text-align:left">False negative</td>
+<td>True negative</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li><strong>Precision</strong>: = true positive/predicted class = true pos/ true pos + false pos</li>
+<li><strong>Recall</strong>: = true pos/actual class = true pos + false neg</li>
+<li><strong>Tradeoff</strong> between P and R: $F_1$ Score(F Score): 2 <em> P </em> R/ ( P + R)</li>
+<li>Tackle with <strong>Large data rationale</strong>:<ul>
+<li>Use a learning algorithm w/ many parameters ( guarantee low bias) </li>
+<li>Use a very large training set (guarantee low variance)</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/02/Machine Learning by Andrew NG/" data-id="cjfhxi7zz00033gvj1dxsj16s" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/02/Hadoop/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/04/02/Machine Learning by Andrew NG/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/02/Hadoop/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/02/Face_Tracking_Notes/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/02/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/02/jessica是个大笨蛋/">jessica是个大笨蛋</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
